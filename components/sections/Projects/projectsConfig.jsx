@@ -9,7 +9,7 @@ const projects = [
   },
   {
     name: "FlameBot - Grid Escape",
-    image: "/fLamebot.png",
+    image: "/flamebot.png",
     link: "https://github.com/Ayushhh26/FlameBot-Grid-Escape",
     tags: ["Python", "Tkinter", "OOP", "Algorithms"],
     description:
