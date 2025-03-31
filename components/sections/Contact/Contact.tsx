@@ -15,22 +15,29 @@ const Contact = () => {
             margin: "0 auto",
           }}
         >
+          <div className={styles.descText}>
+          <h3 className={styles.contactText}>I am actively looking for SDE/AI/ML internships<span className={styles.contactDot}>.</span></h3>
+          </div>
           <div className={styles.ContactDiv}>
+            
             <h4 className={styles.contactText}>
               Contact<span className={styles.contactDot}>.</span>
             </h4>
           </div>
           <div className={styles.desc}>
+
+            
+ 
             <p className={styles.descText}>
               Shoot me an email if you want to connect! You can also find me on{" "}
               <a
-                href="https://www.linkedin.com/in/kavishshah30/"
+                href="https://www.linkedin.com/in/ayush-dodia/"
                 className={styles.contactDot}
               >
                 Linkedin
               </a>{" "}
               or{" "}
-              <a href="https://x.com/kavishshahh" className={styles.contactDot}>
+              <a href="https://x.com/AyushDodia26" className={styles.contactDot}>
                 Twitter
               </a>{" "}
               if that's more your speed.
@@ -43,10 +50,10 @@ const Contact = () => {
               overflow: "hidden",
             }}
           >
-            <a href="mailto:kavishshah30@gmail.com">
+            <a href="mailto:ayushdrn@gmail.com">
               <div className={styles.contactBox}>
                 <MailIcon />
-                <span>kavishshah30@gmail.com</span>
+                <span>ayushdrn@gmail.com</span>
               </div>
             </a>
           </div>

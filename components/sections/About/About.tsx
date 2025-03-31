@@ -15,14 +15,11 @@ const About = () => {
           <div>
             <div className={styles.styledP}>
               <p>
-                Hey! I'm is Kavish, I'm a Electronics and Telecommunication
-                Engineering graduate with a passion for coding and exploring new
+                Hey! I'm Ayush, I'm a Computer Science Masters Student at Rutgers University
+                with a passion for coding and exploring new
                 technologies.
               </p>
-              <p>
-                Presently, I'm a Software Engineer at Ring, where I focus on
-                implementing and adding new features.
-              </p>
+
               <p>
                 As I continue to explore new technologies and push the
                 boundaries of what's possible on the web, I'm excited to embark
@@ -38,8 +35,8 @@ const About = () => {
                 <li>JavaScript (ES6+)</li>
                 <li>React.js</li>
                 <li>Next.js</li>
-                <li>Solidity</li>
-                <li>Golang</li>
+                <li>Python</li>
+                <li>Machine Learning</li>
                 <li>Typescript</li>
               </ul>
             </div>
@@ -47,8 +44,8 @@ const About = () => {
           <div className={styles.aboutPic}>
             <div className={styles.wrapper}>
               <img
-                src="/ethpic.jpeg"
-                alt="photo of kavish shah"
+                src="/profile photo-Photoroom.png"
+                alt="photo of ayush dodia"
                 className={styles.wrapperimg}
               />
             </div>
