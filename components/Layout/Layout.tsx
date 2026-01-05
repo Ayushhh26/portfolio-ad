@@ -5,7 +5,7 @@ import Nav from "../Nav/Nav";
 import About from "../sections/About/About";
 import styles from "./Layout.module.css";
 import Hero from "../sections/Hero/Hero";
-// import Experience from "../sections/Experience/Experience";
+import Experience from "../sections/Experience/Experience";
 import Projects from "../sections/Projects/Projects";
 import Contact from "../sections/Contact/Contact";
 
@@ -13,7 +13,7 @@ const Layout = () => {
   const router = useRouter();
   const heroRef = useRef(null);
   const aboutRef = useRef(null);
-  // const experienceRef = useRef(null);
+  const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -29,7 +29,7 @@ const Layout = () => {
   const refs = {
     heroRef,
     aboutRef,
-    // experienceRef,
+    experienceRef,
     projectsRef,
     contactRef,
   };
@@ -44,9 +44,9 @@ const Layout = () => {
         <div ref={aboutRef}>
           <About />
         </div>
-        {/* <div ref={experienceRef}>
+        <div ref={experienceRef}>
           <Experience />
-        </div> */}
+        </div>
         <div ref={projectsRef}>
           <Projects />
         </div>

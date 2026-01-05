@@ -42,9 +42,9 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
       case "#about":
         scrollToRef(refs.aboutRef);
         break;
-      // case "#jobs":
-      //   scrollToRef(refs.experienceRef);
-      //   break;
+      case "#jobs":
+        scrollToRef(refs.experienceRef);
+        break;
       case "#projects":
         scrollToRef(refs.projectsRef);
         break;
