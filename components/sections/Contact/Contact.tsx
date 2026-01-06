@@ -16,7 +16,10 @@ const Contact = () => {
           }}
         >
           <div className={styles.descText}>
-          <h3 className={styles.contactText}>I am actively looking for SDE/AI/ML internships<span className={styles.contactDot}>.</span></h3>
+            <h3 className={styles.contactText}>
+              I'm currently looking for full-time SDE / AI / ML roles
+              <span className={styles.contactDot}>.</span>
+            </h3>
           </div>
           <div className={styles.ContactDiv}>
             
@@ -27,9 +30,9 @@ const Contact = () => {
           <div className={styles.desc}>
 
             
- 
             <p className={styles.descText}>
-              Shoot me an email if you want to connect! You can also find me on{" "}
+              If you're hiring for full-time roles or just want to connect, feel
+              free to reach out via email. You can also find me on{" "}
               <a
                 href="https://www.linkedin.com/in/ayush-dodia/"
                 className={styles.contactDot}

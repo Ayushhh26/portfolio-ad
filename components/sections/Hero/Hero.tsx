@@ -24,8 +24,7 @@ const Hero = () => {
       <h2>Ayush Dodia.</h2>
       {/* <h3>I'm a Software Engineer.</h3> */}
       <p className={styles.pStyle}>
-        I’m a recently graduated Engineer currently pursuing my MSCS from Rutgers University. I occasionally
-        participate in hackathons for fun.
+        I'm a Software Engineer and MSCS student at Rutgers University, with experience shipping production features. I occasionally participate in hackathons for fun.
       </p>
       <a
         className={styles.emailLink}
