@@ -6,6 +6,7 @@ import Menu from "../menu/Menu";
 
 const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,6 +38,51 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
     };
   }, [isMobileMenuOpen]);
 
+  // Active section detection using Intersection Observer
+  useEffect(() => {
+    const sections = [
+      { ref: refs.aboutRef, id: "#about" },
+      { ref: refs.experienceRef, id: "#jobs" },
+      { ref: refs.projectsRef, id: "#projects" },
+      { ref: refs.contactRef, id: "#contact" },
+    ];
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = sections.find(
+            (s) => s.ref.current === entry.target
+          )?.id;
+          if (sectionId) {
+            setActiveSection(sectionId);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach(({ ref }) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      sections.forEach(({ ref }) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, [refs]);
+
   const handleScrollToSection = (url: any) => {
     switch (url) {
       case "#about":
@@ -50,6 +96,7 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
         break;
       case "#contact":
         scrollToRef(refs.contactRef);
+        break;
       default:
         break;
     }
@@ -68,7 +115,9 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
                 <li key={i} className={styles.NavListItem}>
                   <a
                     href={url}
-                    className={styles.NavLink}
+                    className={`${styles.NavLink} ${
+                      activeSection === url ? styles.NavLinkActive : ""
+                    }`}
                     onClick={(e) => {
                       e.preventDefault();
                       handleScrollToSection(url);
