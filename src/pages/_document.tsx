@@ -7,7 +7,7 @@ export default function Document() {
         <title>Ayush | Software Developer</title>
         <meta
           name="description"
-          content="A software Developer specializing in Frontend and Machine Learning"
+          content="A software Developer specializing in Fullstack and Machine Learning"
         />
         <meta
           name="keywords"
