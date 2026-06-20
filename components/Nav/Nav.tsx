@@ -7,6 +7,7 @@ import Menu from "../menu/Menu";
 const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isHeroNav, setIsHeroNav] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -83,6 +84,26 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
     };
   }, [refs]);
 
+  useEffect(() => {
+    const clearActiveSectionOnHero = () => {
+      const aboutTop = refs.aboutRef.current?.offsetTop;
+
+      if (typeof aboutTop === "number" && window.scrollY < aboutTop - 240) {
+        setActiveSection("");
+        setIsHeroNav(true);
+      } else {
+        setIsHeroNav(false);
+      }
+    };
+
+    clearActiveSectionOnHero();
+    window.addEventListener("scroll", clearActiveSectionOnHero);
+
+    return () => {
+      window.removeEventListener("scroll", clearActiveSectionOnHero);
+    };
+  }, [refs]);
+
   const handleScrollToSection = (url: any) => {
     switch (url) {
       case "#about":
@@ -104,7 +125,11 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
 
   return (
     <>
-      <div className={styles.mainContainer}>
+      <div
+        className={`${styles.mainContainer} ${
+          isHeroNav ? styles.heroContainer : ""
+        }`}
+      >
         <a href="/" className={styles.LogoLink}>
           Ayush Dodia
         </a>
