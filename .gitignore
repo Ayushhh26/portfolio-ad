@@ -20,6 +20,10 @@
 .DS_Store
 *.pem
 
+# cursor / codex local tooling
+.cursor/
+.codex/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
