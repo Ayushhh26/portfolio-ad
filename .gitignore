@@ -19,10 +19,8 @@
 # misc
 .DS_Store
 *.pem
-
-# cursor / codex local tooling
-.cursor/
-.codex/
+__pycache__/
+*.pyc
 
 # debug
 npm-debug.log*
