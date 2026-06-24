@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  margin: 10px 0 40px;
+  margin: 10px 0 0;
   width: 100%;
   font-size: clamp(26px, 5vw, var(--fz-heading));
   white-space: nowrap;
@@ -45,6 +45,60 @@
   height: 1px;
   margin-left: 20px;
   background-color: var(--lightest-navy);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 28px;
+}
+
+.projectCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  border-radius: 999px;
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 42px;
+}
+
+.filterButton {
+  border: 1px solid var(--lightest-navy);
+  border-radius: 999px;
+  background: rgba(17, 34, 64, 0.56);
+  color: var(--slate);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1;
+  padding: 0.78rem 1rem;
+  transition: border-color 180ms ease, color 180ms ease,
+    background-color 180ms ease;
+}
+
+.filterButton:hover,
+.filterButton:focus-visible {
+  border-color: var(--green);
+  color: var(--green);
+  outline: none;
+}
+
+.filterButtonActive {
+  border-color: var(--green);
+  background: rgba(100, 255, 218, 0.08);
+  color: var(--green);
 }
 
 /* .projectList {
@@ -143,7 +197,7 @@
 
 .projectDetails p {
   margin: 0 0 1rem 0;
-  color: #666;
+  color: var(--slate);
 }
 
 .projectTags {
@@ -154,6 +208,25 @@
   font-size: var(--text-xs);
   color: var(--brand);
   margin: 0.8rem 0;
+}
+
+@media (max-width: 770px) {
+  .sectionHeader {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .head::after {
+    width: 100%;
+  }
+
+  .filterBar {
+    gap: 0.55rem;
+  }
+
+  .filterButton {
+    padding: 0.68rem 0.8rem;
+  }
 }
 
 .tag {

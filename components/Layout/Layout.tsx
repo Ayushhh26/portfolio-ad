@@ -38,7 +38,7 @@ const Layout = () => {
     <>
       <Nav scrollToRef={scrollToRef} refs={refs} />
       <main className={styles.main}>
-        <div ref={heroRef}>
+        <div ref={heroRef} className={styles.heroWrapper}>
           <Hero />
         </div>
         <div ref={aboutRef}>

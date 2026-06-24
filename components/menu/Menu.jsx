@@ -1,5 +1,5 @@
 // components/Menu.js
-import React, { useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { navLinks } from "@/config";
 import Link from "next/link";
@@ -16,6 +16,14 @@ const Menu = (props) => {
   const buttonRef = useRef(null);
   const navRef = useRef(null);
   const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
 
   return (
     <div className={styles.styledMenu}>

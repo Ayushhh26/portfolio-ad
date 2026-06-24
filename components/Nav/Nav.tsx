@@ -5,17 +5,13 @@ import styles from "./Nav.module.css";
 import Menu from "../menu/Menu";
 
 const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isHeroNav, setIsHeroNav] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 770) {
-        setIsMobileMenuOpen(true);
-      } else {
-        setIsMobileMenuOpen(false);
-      }
+      setIsMobileViewport(window.innerWidth < 770);
     };
 
     handleResize();
@@ -26,18 +22,6 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isMobileMenuOpen]);
 
   // Active section detection using Intersection Observer
   useEffect(() => {
@@ -133,7 +117,7 @@ const Nav = ({ scrollToRef, refs }: { scrollToRef: any; refs: any }) => {
         <a href="/" className={styles.LogoLink}>
           Ayush Dodia
         </a>
-        {!isMobileMenuOpen ? (
+        {!isMobileViewport ? (
           <div className={styles.NavLinksContainer}>
             <ol className={styles.NavList}>
               {navLinks.map(({ url, name }, i) => (
